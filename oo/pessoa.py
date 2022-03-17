@@ -15,3 +15,10 @@ if __name__ == '__main__':
     print(f'Nome: {dilma.nome}\nIdade: {dilma.idade}\nFilhos:')
     for filho in dilma.filhos:
         print(filho.nome)
+
+    leonardo.sobrenome = 'Oliveira'
+    dilma.sobrenome = 'Cardoso'
+    print(dilma.sobrenome)
+    del dilma.sobrenome
+    print(leonardo.__dict__)
+    print(dilma.__dict__)
