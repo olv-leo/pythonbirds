@@ -17,9 +17,11 @@ class Pessoa:
     def metodo_de_classe(cls):
         return f'cls: {cls}, olhos: {cls.olhos}'
 
+class Homem(Pessoa):
+    pass
 
 if __name__ == '__main__':
-    leonardo = Pessoa(nome='Leonardo', idade=25)
+    leonardo = Homem(nome='Leonardo', idade=25)
     dilma = Pessoa(leonardo, nome='Dilma', idade=40)
     print(leonardo.cumprimentar())
     print(f'Nome: {dilma.nome}\nIdade: {dilma.idade}\nFilhos:')
@@ -42,4 +44,8 @@ if __name__ == '__main__':
     print(id(Pessoa.olhos), id(leonardo.olhos), id(dilma.olhos))
     print(Pessoa.metodo_estatico(), Pessoa.metodo_de_classe())
     print(leonardo.metodo_estatico(), leonardo.metodo_de_classe())
+    print(isinstance(leonardo, Pessoa))
+    print(isinstance(dilma, Pessoa))
+    print(isinstance(leonardo, Homem))
+    print(isinstance(dilma, Homem))
     
